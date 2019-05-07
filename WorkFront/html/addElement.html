@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function AddEle(){
+            var obj = document.getElementById("iptTxt");
+            var value = obj.value;
+            console.log(value)
+            var li = document.createElement("li");
+            li.innerHTML = value;
+            var ul = document.getElementById("playlist");
+            ul.appendChild(li);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id = "iptTxt"/> &nbsp;
+    <button type="button" onclick="AddEle()"> Add </button></br>
+    <ul id="playlist">
+
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wanandroid</title>
+    <link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="Shortcut Icon" href="http://www.baidu.com/favicon.ico" />
+    <!-- 先引入jQuery.js 方便引入JQuery 中的jsonp 的ajax请求 -->
+    <script src="./js/jquery.min.js"></script>
+    <!-- 再引入Api.js 用来封装一层Http的请求 -->
+    <script src="./js/Api.js"></script>
+    <!-- 最后引入程序中的js -->
+    <script src="./js/index.js"></script>
+
+    <style type="text/css">
+        .swiper-container {
+            width: 100%;
+            height: 240px;
+            margin-top: 5px;
+            border: 1px solid green;
+        }
+
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
+</head>
+
+<body onload='init()'>
+
+    <div class="navigation">
+        <img id = "logoImg"></img>
+
+        <div id="nav_title">
+            <ul id="nav_ul">
+                <li><a href="http://www.baidu.com">首页</a></li>
+                <li><a href="http://www.baidu.com">项目</a></li>
+                <li><a href="http://www.baidu.com">体系</a></li>
+                <li><a href="http://www.baidu.com">公众号</a></li>
+                <li><a href="http://www.baidu.com">导航</a></li>
+                <li><a href="http://www.baidu.com">项目分类</a></li>
+                <li><a href="http://www.baidu.com">工具</a></li>
+            </ul>
+        </div>
+        <img id="search_img" src="./image/search.png"></img>
+        <div id="search">
+            <input id="search_input" placeholder="搜索关键词以空格形式隔开"></input>
+        </div>
+
+        <div id="tv_login_reg">
+            <text style="color: white">登录</text>
+            <text style="color: white">·</text>
+            <text style="color: white">注册</text>
+        </div>
+
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./image/image_1.png"></img></div>
+            <div class="swiper-slide"><img src="./image/image_2.png"></img></div>
+            <div class="swiper-slide"><img src="./image/image_3.png"></img></div>
+            <div class="swiper-slide"><img src="./image/image_4.png"></img></div>
+            <div class="swiper-slide"><img src="./image/image_5.png"></img></div>
+            <div class="swiper-slide"><img src="./image/image_6.png"></img></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="parent">
+
+        <div class="right">
+
+            <div class="rightCol">
+                <div id="rightBtn">
+                    <button id="getList" onclick="getList()">Get请求wanandroid列表</button>
+                    <button id="addDiv" onclick="addDiv('动态添加')">动态创建div</button>
+                    <button id="hideDiv" onclick="hideDiv()">隐藏div</button>
+                </div>
+
+                <div id="rightTools">
+                    <text id="rtitle">常用工具</text>
+                    <text id="horline"></text>
+                    <ul class="tagClass">
+                        <div class="tagdiv">
+                            <li>bejson</li>
+                            <li>Todo</li>
+                            <li>OpenApis</li>
+                            <li>md5&sha</li>
+                            <li>base64</li>
+                            <li>二维码</li>
+                            <li>取色器</li>
+                            <li>iconfont</li>
+                            <li>tinypng</li>
+                            <li>进制转化</li>
+                            <li>短链接</li>
+                            <li>速查</li>
+                            <li>正则</li>
+                            <li>URLOrder</li>
+                            <li>https检测</li>
+
+                        </div>
+                    </ul>
+                </div>
+
+                <div id="contactUs">
+                    <text id="rtitle">联系我们</text>
+                    <text id="horline"></text>
+                    <ul id="contact_us_ul">
+                        <li><span>我要反馈</span></li>
+                        <li><span>本站开放API</span></li>
+                        <li><span>本站Apk下载</span></li>
+                        <li><span>交流群：154646435</span></li>
+                        <li><span>本站历史</span></li>
+                        <li><span>商务合作</span></li>
+                        <li><span>赞助本站</span></li>
+                        <li><span>我要反馈</span></li>
+                        <li><span>本站开放API</span></li>
+                        <li><span>本站Apk下载</span></li>
+                        <li><span>交流群：154646435</span></li>
+                        <li><span>本站历史</span></li>
+                        <li><span>商务合作</span></li>
+                        <li><span>赞助本站</span></li>
+                        <li><span>交流群：154646435</span></li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+        <div class="tips">
+            <button class="btn">给大家整理了一些学习资料</button>
+            <button class="btn">你能看到的数据本站均提供了开放API</button>
+            <button class="btn">给大家整理了一些学习资料</button>
+            <button class="btn">你能看到的数据本站均提供了开放API</button>
+            <button class="btn">给大家整理了一些学习资料</button>
+            <button class="btn">你能看到的数据本站均提供了开放API</button>
+        </div>
+
+        <div class="list" id="list">
+            <div class="item" id="item">
+                <img src="./image/collect.png" width="25px" height="25px"></img>
+                <text id="title">
+                    <h4>非常喜欢的一个记笔记神器</h4>
+                </text>
+                <div class="item_v">
+                    <text id="zd">置顶</text>
+                    <text id="author">作者：cx羽</text>
+                    <text id="kinds">分类：干货资源/各类工具</text>
+                    <text id="time">时间：1天前</text>
+                </div>
+            </div>
+        </div>
+        <div class="empty"></div>
+    </div>
+
+
+    <!-- Swiper JS -->
+    <script src="./js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>

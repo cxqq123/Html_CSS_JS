@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 先引入jQuery.js 方便引入JQuery 中的jsonp 的ajax请求 -->
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        
+
+        .g-flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100vw;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .pic {
+            flex: 0 0 200px;
+            height: 200px;
+            margin: 10px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 160px;
+            background-image: url("../image/test.png");
+            background-size: cover;
+            mix-blend-mode: difference;
+            color: #fff;
+        }
+
+        .pic1 {
+            background-image: url("../image/test.png"), linear-gradient(deeppink, deeppink);
+            background-blend-mode: lighten;
+            background-size: cover;
+        }
+
+        .pic2 {
+            background-image: url("../image/test.png"), linear-gradient(yellowgreen, yellowgreen);
+            background-blend-mode: lighten;
+            background-size: cover;
+        }
+
+        .pic3 {
+            background-image: url("../image/test.png"), linear-gradient(#f00, #00f);
+            background-blend-mode: lighten;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="g-flex">
+        <div class="pic">原图</div>
+        <div class="pic pic1">粉色</div>
+        <div class="pic pic2">绿色</div>
+        <div class="pic pic3">渐变</div>
+    </div>
+</body>
+
+</html>
