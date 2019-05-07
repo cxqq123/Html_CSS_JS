@@ -1,3 +1,5 @@
+//添加文件夹所有文件 git add WorkFront/ 表示添加该文件夹所有文件
+//只添加单个a.txt文件
 git add a.txt
 git commit -m "第一次提交" //注释说明
 git remote add origin https://github.com/cxqq123/Html_CSS_JS.git
